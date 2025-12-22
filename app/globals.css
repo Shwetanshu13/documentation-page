@@ -22,5 +22,66 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Documentation Styles */
+.doc-container {
+  @apply max-w-4xl mx-auto px-6 py-12;
+}
+
+.doc-title {
+  @apply text-4xl font-bold mb-8 text-zinc-900 dark:text-zinc-100;
+}
+
+.doc-section {
+  @apply mb-10;
+}
+
+.doc-step {
+  @apply text-2xl font-semibold mb-4 text-zinc-800 dark:text-zinc-200;
+}
+
+.doc-text {
+  @apply text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4;
+}
+
+.doc-list {
+  @apply list-disc list-inside space-y-2 mb-4 text-zinc-700 dark:text-zinc-300;
+}
+
+.doc-check {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.doc-cross {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.code-block {
+  @apply bg-zinc-900 dark:bg-zinc-950 text-zinc-100 rounded-lg p-4 my-4 overflow-x-auto font-mono text-sm;
+}
+
+.code-inline {
+  @apply bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 px-2 py-1 rounded font-mono text-sm;
+}
+
+.warning-box {
+  @apply bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-4 my-4 rounded-r-lg;
+}
+
+.info-box {
+  @apply bg-blue-50 dark:bg-blue-950 border-l-4 border-blue-500 p-4 my-4 rounded-r-lg;
+}
+
+.critical-box {
+  @apply bg-red-50 dark:bg-red-950 border-l-4 border-red-500 p-4 my-4 rounded-r-lg;
+}
+
+.doc-divider {
+  @apply border-t border-zinc-300 dark:border-zinc-700 my-8;
+}
+
+.part-header {
+  @apply text-3xl font-bold mb-6 text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-900 p-4 rounded-lg;
 }

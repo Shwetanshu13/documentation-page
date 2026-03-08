@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CodeBlock from "../../components/CodeBlock";
 
 export const metadata = {
     title: "Creating APK for React Native Expo | My Documentation",
@@ -69,7 +70,7 @@ export default function ExpoApkPage() {
                     </div>
 
                     <p className="doc-text">Run this first (diagnostics):</p>
-                    <pre className="code-block">npx expo doctor</pre>
+                    <CodeBlock language="bash" code={`npx expo doctor`} />
 
                     <div className="warning-box">
                         <p className="text-amber-800 dark:text-amber-200">
@@ -83,9 +84,12 @@ export default function ExpoApkPage() {
                     <h2 className="doc-step">Step 3️⃣ Reinstall Core Native Libraries Correctly</h2>
                     <p className="doc-text">Run these even if they are already installed:</p>
 
-                    <pre className="code-block">{`npx expo install react-native-screens
+                    <CodeBlock
+                        language="bash"
+                        code={`npx expo install react-native-screens
 npx expo install react-native-safe-area-context
-npx expo install react-native-gesture-handler`}</pre>
+npx expo install react-native-gesture-handler`}
+                    />
 
                     <p className="doc-text font-semibold">Why this matters:</p>
                     <ul className="doc-list">
@@ -100,7 +104,7 @@ npx expo install react-native-gesture-handler`}</pre>
                     <h2 className="doc-step">Step 4️⃣ Update All Expo Packages Safely</h2>
                     <p className="doc-text">Use Expo&apos;s upgrade tool — not npm update.</p>
 
-                    <pre className="code-block">npx expo upgrade</pre>
+                    <CodeBlock language="bash" code={`npx expo upgrade`} />
 
                     <p className="doc-text font-semibold">When prompted:</p>
                     <ul className="doc-list">
@@ -122,13 +126,16 @@ npx expo install react-native-gesture-handler`}</pre>
                     <h2 className="doc-step">Step 5️⃣ Lock New Architecture OFF (important)</h2>
                     <p className="doc-text">In <code className="code-inline">app.json</code> or <code className="code-inline">app.config.js</code>:</p>
 
-                    <pre className="code-block">{`{
-  "expo": {
-    "android": {
-      "newArchEnabled": false
+                    <CodeBlock
+                        language="json"
+                        code={`{
+    "expo": {
+        "android": {
+            "newArchEnabled": false
+        }
     }
-  }
-}`}</pre>
+}`}
+                    />
 
                     <div className="warning-box">
                         <p className="text-amber-800 dark:text-amber-200 font-semibold mb-2">⚠️ Why:</p>
@@ -149,13 +156,16 @@ npx expo install react-native-gesture-handler`}</pre>
                     </div>
 
                     <p className="doc-text">From project root:</p>
-                    <pre className="code-block">{`rm -rf node_modules
+                    <CodeBlock
+                        language="bash"
+                        code={`rm -rf node_modules
 rm -rf .expo
 rm package-lock.json
-npm install`}</pre>
+npm install`}
+                    />
 
                     <p className="doc-text">Then:</p>
-                    <pre className="code-block">npx expo prebuild --clean</pre>
+                    <CodeBlock language="bash" code={`npx expo prebuild --clean`} />
 
                     <p className="doc-text">Even in managed workflow, this ensures:</p>
                     <ul className="doc-list">
@@ -175,11 +185,14 @@ npm install`}</pre>
                 <section className="doc-section">
                     <h2 className="doc-step">Step 7️⃣ Install & Configure EAS (once)</h2>
 
-                    <pre className="code-block">{`npm install -g eas-cli
-eas login`}</pre>
+                    <CodeBlock
+                        language="bash"
+                        code={`npm install -g eas-cli
+eas login`}
+                    />
 
                     <p className="doc-text">Inside your project:</p>
-                    <pre className="code-block">eas build:configure</pre>
+                    <CodeBlock language="bash" code={`eas build:configure`} />
 
                     <div className="info-box">
                         <p className="text-blue-800 dark:text-blue-200">
@@ -193,15 +206,18 @@ eas login`}</pre>
                     <h2 className="doc-step">Step 8️⃣ Configure APK Output (important)</h2>
                     <p className="doc-text">Open <code className="code-inline">eas.json</code> and ensure this exists:</p>
 
-                    <pre className="code-block">{`{
-  "build": {
-    "preview": {
-      "android": {
-        "buildType": "apk"
-      }
+                    <CodeBlock
+                        language="json"
+                        code={`{
+    "build": {
+        "preview": {
+            "android": {
+                "buildType": "apk"
+            }
+        }
     }
-  }
-}`}</pre>
+}`}
+                    />
 
                     <div className="warning-box">
                         <p className="text-amber-800 dark:text-amber-200 font-semibold mb-2">⚠️ Why:</p>
@@ -216,7 +232,10 @@ eas login`}</pre>
                 <section className="doc-section">
                     <h2 className="doc-step">Step 9️⃣ Start the APK Build</h2>
 
-                    <pre className="code-block">eas build -p android --profile preview</pre>
+                    <CodeBlock
+                        language="bash"
+                        code={`eas build -p android --profile preview`}
+                    />
 
                     <div className="info-box">
                         <p className="text-blue-800 dark:text-blue-200 font-semibold mb-2">💡 What happens:</p>
@@ -236,7 +255,9 @@ eas login`}</pre>
                     <h2 className="doc-step">✅ Summary</h2>
                     <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg p-6">
                         <p className="text-green-800 dark:text-green-200 font-semibold mb-4">Quick Reference Commands:</p>
-                        <pre className="code-block">{`# Diagnostics
+                        <CodeBlock
+                            language="bash"
+                            code={`# Diagnostics
 npx expo doctor
 
 # Install native deps correctly
@@ -253,7 +274,8 @@ npm install
 npx expo prebuild --clean
 
 # Build APK
-eas build -p android --profile preview`}</pre>
+eas build -p android --profile preview`}
+                        />
                     </div>
                 </section>
             </main>

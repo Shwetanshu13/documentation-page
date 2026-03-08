@@ -14,6 +14,13 @@ const documentations = [
     href: "/docs/cpp",
     category: "C++ / Competitive Programming",
   },
+  {
+    title: "Express Backend Template",
+    description:
+      "Clean Express structure: routes/controllers/services/repos + Drizzle & Mongoose + JWT/session auth",
+    href: "/docs/express-backend",
+    category: "Backend / Express",
+  },
 ];
 
 export default function Home() {

@@ -43,7 +43,7 @@ body {
 }
 
 .doc-text {
-  @apply text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4;
+  @apply text-[1.05rem] text-zinc-700 dark:text-zinc-300 leading-8 mb-4;
 }
 
 .doc-list {
@@ -59,7 +59,74 @@ body {
 }
 
 .code-block {
-  @apply bg-zinc-900 dark:bg-zinc-950 text-zinc-100 rounded-lg p-4 my-4 overflow-x-auto font-mono text-sm;
+  @apply bg-zinc-950 text-zinc-100 rounded-xl p-4 my-4 overflow-x-auto font-mono text-sm leading-6 border border-zinc-800;
+  tab-size: 2;
+}
+
+.code-block code {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* PrismJS token colors (Tailwind tokens only) */
+.code-block .token.comment,
+.code-block .token.prolog,
+.code-block .token.doctype,
+.code-block .token.cdata {
+  @apply text-zinc-400;
+}
+
+.code-block .token.punctuation {
+  @apply text-zinc-200;
+}
+
+.code-block .token.property,
+.code-block .token.tag,
+.code-block .token.boolean,
+.code-block .token.number,
+.code-block .token.constant,
+.code-block .token.symbol {
+  @apply text-amber-300;
+}
+
+.code-block .token.selector,
+.code-block .token.attr-name,
+.code-block .token.string,
+.code-block .token.char,
+.code-block .token.builtin,
+.code-block .token.inserted {
+  @apply text-emerald-300;
+}
+
+.code-block .token.operator,
+.code-block .token.entity,
+.code-block .token.url,
+.code-block .token.variable {
+  @apply text-sky-300;
+}
+
+.code-block .token.atrule,
+.code-block .token.attr-value,
+.code-block .token.keyword {
+  @apply text-fuchsia-300;
+}
+
+.code-block .token.function,
+.code-block .token.class-name {
+  @apply text-indigo-300;
+}
+
+.code-block .token.regex,
+.code-block .token.important {
+  @apply text-rose-300;
+}
+
+.code-block .token.bold {
+  font-weight: 700;
+}
+
+.code-block .token.italic {
+  font-style: italic;
 }
 
 .code-inline {

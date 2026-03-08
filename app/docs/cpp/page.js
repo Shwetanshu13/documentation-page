@@ -1,40 +1,43 @@
 import Link from "next/link";
+import CodeBlock from "../../components/CodeBlock";
 
 export const metadata = {
-    title: "C++ STL & DSA Cheatsheet | My Documentation",
-    description:
-        "Frequently used C++ STL syntax and competitive programming data structures (DSU, segment tree, Fenwick, PBDS)",
+  title: "C++ STL & DSA Cheatsheet | My Documentation",
+  description:
+    "Frequently used C++ STL syntax and competitive programming data structures (DSU, segment tree, Fenwick, PBDS)",
 };
 
 export default function CppCheatsheetPage() {
-    return (
-        <div className="min-h-screen bg-zinc-50 dark:bg-black">
-            <header className="border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 sticky top-0 z-10">
-                <div className="max-w-4xl mx-auto px-6 py-4 flex items-center gap-4">
-                    <Link
-                        href="/"
-                        className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-                    >
-                        ← Back to Home
-                    </Link>
-                </div>
-            </header>
+  return (
+    <div className="min-h-screen bg-zinc-50 dark:bg-black">
+      <header className="border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 sticky top-0 z-10">
+        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center gap-4">
+          <Link
+            href="/"
+            className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          >
+            ← Back to Home
+          </Link>
+        </div>
+      </header>
 
-            <main className="doc-container">
-                <h1 className="doc-title">🧠 C++ STL Syntax (CP / LeetCode) + Advanced DS</h1>
+      <main className="doc-container">
+        <h1 className="doc-title">🧠 C++ STL Syntax (CP / LeetCode) + Advanced DS</h1>
 
-                <p className="doc-text">
-                    A practical cheatsheet for the most frequently used STL patterns and common advanced data structures.
-                    Copy/paste-friendly, optimized for competitive programming.
-                </p>
+        <p className="doc-text">
+          A practical cheatsheet for the most frequently used STL patterns and common advanced data structures.
+          Copy/paste-friendly, optimized for competitive programming.
+        </p>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <div className="part-header">🧩 Basics / Template</div>
+        <div className="part-header">🧩 Basics / Template</div>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Fast IO + Common Includes</h2>
-                    <pre className="code-block">{`#include <bits/stdc++.h>
+        <section className="doc-section">
+          <h2 className="doc-step">Fast IO + Common Includes</h2>
+          <CodeBlock
+            language="cpp"
+            code={`#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -43,33 +46,39 @@ int main() {
 
   // code
   return 0;
-}`}</pre>
-                    <div className="info-box">
-                        <p className="text-blue-800 dark:text-blue-200">
-                            💡 For LeetCode, you usually don&apos;t need <code className="code-inline">main()</code>. For CP, you do.
-                        </p>
-                    </div>
-                </section>
+}`}
+          />
+          <div className="info-box">
+            <p className="text-blue-800 dark:text-blue-200">
+              💡 For LeetCode, you usually don&apos;t need <code className="code-inline">main()</code>. For CP, you do.
+            </p>
+          </div>
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Handy Type Aliases</h2>
-                    <pre className="code-block">{`using ll = long long;
+        <section className="doc-section">
+          <h2 className="doc-step">Handy Type Aliases</h2>
+          <CodeBlock
+            language="cpp"
+            code={`using ll = long long;
 using pii = pair<int,int>;
 using pll = pair<long long,long long>;
 
 // vectors
 using vi = vector<int>;
 using vll = vector<long long>;
-using vpii = vector<pair<int,int>>;`}</pre>
-                </section>
+        using vpii = vector<pair<int,int>>;`}
+          />
+        </section>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <div className="part-header">📦 Core STL Containers</div>
+        <div className="part-header">📦 Core STL Containers</div>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">vector (insert / erase / traverse)</h2>
-                    <pre className="code-block">{`vector<int> a;
+        <section className="doc-section">
+          <h2 className="doc-step">vector (insert / erase / traverse)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`vector<int> a;
 
 // push / pop
 a.push_back(10);
@@ -106,17 +115,20 @@ a.erase(remove(a.begin(), a.end(), 5), a.end());
 
 // unique (after sort) to deduplicate
 sort(a.begin(), a.end());
-a.erase(unique(a.begin(), a.end()), a.end());`}</pre>
-                    <div className="warning-box">
-                        <p className="text-amber-800 dark:text-amber-200">
-                            ⚠️ <code className="code-inline">erase</code> invalidates iterators after the erased position.
-                        </p>
-                    </div>
-                </section>
+a.erase(unique(a.begin(), a.end()), a.end());`}
+          />
+          <div className="warning-box">
+            <p className="text-amber-800 dark:text-amber-200">
+              ⚠️ <code className="code-inline">erase</code> invalidates iterators after the erased position.
+            </p>
+          </div>
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">string (common ops)</h2>
-                    <pre className="code-block">{`string s = "hello";
+        <section className="doc-section">
+          <h2 className="doc-step">string (common ops)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`string s = "hello";
 
 s.push_back('!');
 s.pop_back();
@@ -142,12 +154,15 @@ for (char &c : s) c = (char)tolower(c);
 // split by space (simple)
 stringstream ss(s);
 vector<string> parts;
-for (string w; ss >> w; ) parts.push_back(w);`}</pre>
-                </section>
+for (string w; ss >> w; ) parts.push_back(w);`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">pair / tuple</h2>
-                    <pre className="code-block">{`pair<int,int> p = {3, 7};
+        <section className="doc-section">
+          <h2 className="doc-step">pair / tuple</h2>
+          <CodeBlock
+            language="cpp"
+            code={`pair<int,int> p = {3, 7};
 int x = p.first;
 int y = p.second;
 
@@ -158,16 +173,19 @@ int i = get<0>(tp);
 
 // sorting vector of pairs by default: first then second
 vector<pair<int,int>> vp = {{2,5},{1,9},{2,1}};
-sort(vp.begin(), vp.end());`}</pre>
-                </section>
+sort(vp.begin(), vp.end());`}
+          />
+        </section>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <div className="part-header">🔍 Algorithms You Use Daily</div>
+        <div className="part-header">🔍 Algorithms You Use Daily</div>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">sort / custom comparator</h2>
-                    <pre className="code-block">{`vector<int> a = {5, 1, 7};
+        <section className="doc-section">
+          <h2 className="doc-step">sort / custom comparator</h2>
+          <CodeBlock
+            language="cpp"
+            code={`vector<int> a = {5, 1, 7};
 sort(a.begin(), a.end());
 sort(a.rbegin(), a.rend()); // descending
 
@@ -177,12 +195,15 @@ vector<pair<int,int>> v = {{1,5},{1,2},{2,3}};
 sort(v.begin(), v.end(), [](const auto& A, const auto& B) {
   if (A.second != B.second) return A.second < B.second;
   return A.first > B.first;
-});`}</pre>
-                </section>
+});`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">binary search helpers (lower_bound / upper_bound)</h2>
-                    <pre className="code-block">{`vector<int> a = {1, 2, 2, 5, 9};
+        <section className="doc-section">
+          <h2 className="doc-step">binary search helpers (lower_bound / upper_bound)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`vector<int> a = {1, 2, 2, 5, 9};
 
 // first index with value >= x
 int x = 2;
@@ -197,16 +218,19 @@ int idx2 = (int)(it2 - a.begin());
 int cnt = (int)(upper_bound(a.begin(), a.end(), x) - lower_bound(a.begin(), a.end(), x));
 
 // existence check
-bool exists = binary_search(a.begin(), a.end(), x);`}</pre>
-                </section>
+bool exists = binary_search(a.begin(), a.end(), x);`}
+          />
+        </section>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <div className="part-header">🧱 set / map (ordered, tree-based)</div>
+        <div className="part-header">🧱 set / map (ordered, tree-based)</div>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">set (insert / erase / find / bounds)</h2>
-                    <pre className="code-block">{`set<int> st;
+        <section className="doc-section">
+          <h2 className="doc-step">set (insert / erase / find / bounds)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`set<int> st;
 
 st.insert(10);
 st.insert(5);
@@ -240,12 +264,15 @@ if (lb != st.begin()) {
 }
 if (lb != st.end()) {
   auto nextIt = lb;
-}`}</pre>
-                </section>
+}`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">multiset (duplicates)</h2>
-                    <pre className="code-block">{`multiset<int> ms;
+        <section className="doc-section">
+          <h2 className="doc-step">multiset (duplicates)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`multiset<int> ms;
 ms.insert(5);
 ms.insert(5);
 
@@ -258,12 +285,15 @@ ms.erase(5);
 
 // get min / max
 int mn = *ms.begin();
-int mx = *ms.rbegin();`}</pre>
-                </section>
+int mx = *ms.rbegin();`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">map / unordered_map (counts, frequency)</h2>
-                    <pre className="code-block">{`map<string,int> mp;           // ordered (log n)
+        <section className="doc-section">
+          <h2 className="doc-step">map / unordered_map (counts, frequency)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`map<string,int> mp;           // ordered (log n)
 unordered_map<string,int> um;  // average O(1)
 
 mp["a"]++;
@@ -289,22 +319,25 @@ for (auto &[k, v] : mp) best = max(best, v);
 // performance tips for unordered_map
 unordered_map<int,int> cnt;
 cnt.reserve(1 << 20);
-cnt.max_load_factor(0.7);`}</pre>
-                    <div className="warning-box">
-                        <p className="text-amber-800 dark:text-amber-200">
-                            ⚠️ On some judges, <code className="code-inline">unordered_map</code> can be hacked.
-                            If you see TLE, switch to <code className="code-inline">map</code> or add a custom hash.
-                        </p>
-                    </div>
-                </section>
+cnt.max_load_factor(0.7);`}
+          />
+          <div className="warning-box">
+            <p className="text-amber-800 dark:text-amber-200">
+              ⚠️ On some judges, <code className="code-inline">unordered_map</code> can be hacked.
+              If you see TLE, switch to <code className="code-inline">map</code> or add a custom hash.
+            </p>
+          </div>
+        </section>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <div className="part-header">🧺 priority_queue (max-heap / min-heap / pairs)</div>
+        <div className="part-header">🧺 priority_queue (max-heap / min-heap / pairs)</div>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Basic heaps</h2>
-                    <pre className="code-block">{`// max-heap (default)
+        <section className="doc-section">
+          <h2 className="doc-step">Basic heaps</h2>
+          <CodeBlock
+            language="cpp"
+            code={`// max-heap (default)
 priority_queue<int> pq;
 pq.push(5);
 pq.push(1);
@@ -315,12 +348,15 @@ pq.pop();
 priority_queue<int, vector<int>, greater<int>> minpq;
 minpq.push(5);
 minpq.push(1);
-int mn = minpq.top(); // 1`}</pre>
-                </section>
+int mn = minpq.top(); // 1`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">priority_queue of pairs</h2>
-                    <pre className="code-block">{`// max-heap by first, then second (default pair ordering)
+        <section className="doc-section">
+          <h2 className="doc-step">priority_queue of pairs</h2>
+          <CodeBlock
+            language="cpp"
+            code={`// max-heap by first, then second (default pair ordering)
 priority_queue<pair<int,int>> pqp;
 pqp.push({3, 10});
 pqp.push({5, 1});
@@ -333,12 +369,15 @@ minpqp.push({5, 1});
 // common pattern: store (dist, node) for Dijkstra
 using P = pair<long long,int>;
 priority_queue<P, vector<P>, greater<P>> pq;
-// pq.push({dist, node});`}</pre>
-                </section>
+// pq.push({dist, node});`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Custom comparator (struct)</h2>
-                    <pre className="code-block">{`struct Node {
+        <section className="doc-section">
+          <h2 className="doc-step">Custom comparator (struct)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`struct Node {
   int a, b;
 };
 
@@ -351,16 +390,19 @@ struct Cmp {
   }
 };
 
-priority_queue<Node, vector<Node>, Cmp> pq;`}</pre>
-                </section>
+priority_queue<Node, vector<Node>, Cmp> pq;`}
+          />
+        </section>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <div className="part-header">🌲 Trees & Graph Helpers</div>
+        <div className="part-header">🌲 Trees & Graph Helpers</div>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Adjacency list (graph)</h2>
-                    <pre className="code-block">{`int n, m;
+        <section className="doc-section">
+          <h2 className="doc-step">Adjacency list (graph)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`int n, m;
 vector<vector<int>> g(n);
 
 // add edge u->v (0-indexed)
@@ -372,12 +414,15 @@ g[v].push_back(u);
 
 // weighted graph
 vector<vector<pair<int,int>>> wg(n);
-// wg[u].push_back({v, w});`}</pre>
-                </section>
+// wg[u].push_back({v, w});`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">DFS / BFS (quick patterns)</h2>
-                    <pre className="code-block">{`// BFS
+        <section className="doc-section">
+          <h2 className="doc-step">DFS / BFS (quick patterns)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`// BFS
 vector<int> dist(n, -1);
 queue<int> q;
 dist[src] = 0;
@@ -397,16 +442,19 @@ function<void(int)> dfs = [&](int u) {
   vis[u] = 1;
   for (int v : g[u]) if (!vis[v]) dfs(v);
 };
-// dfs(src);`}</pre>
-                </section>
+// dfs(src);`}
+          />
+        </section>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <div className="part-header">⚙️ Advanced Data Structures</div>
+        <div className="part-header">⚙️ Advanced Data Structures</div>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Disjoint Set Union (DSU / Union-Find)</h2>
-                    <pre className="code-block">{`struct DSU {
+        <section className="doc-section">
+          <h2 className="doc-step">Disjoint Set Union (DSU / Union-Find)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`struct DSU {
   vector<int> p, sz;
   DSU(int n=0) { init(n); }
   void init(int n) {
@@ -427,15 +475,18 @@ function<void(int)> dfs = [&](int u) {
     return true;
   }
   bool same(int a, int b) { return find(a) == find(b); }
-};`}</pre>
-                    <p className="doc-text">
-                        Typical use: Kruskal MST, connected components, dynamic connectivity.
-                    </p>
-                </section>
+  };`}
+          />
+          <p className="doc-text">
+            Typical use: Kruskal MST, connected components, dynamic connectivity.
+          </p>
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Fenwick Tree (BIT) — prefix sums</h2>
-                    <pre className="code-block">{`struct Fenwick {
+        <section className="doc-section">
+          <h2 className="doc-step">Fenwick Tree (BIT) — prefix sums</h2>
+          <CodeBlock
+            language="cpp"
+            code={`struct Fenwick {
   int n;
   vector<long long> bit;
   Fenwick(int n=0) { init(n); }
@@ -455,17 +506,20 @@ function<void(int)> dfs = [&](int u) {
     if (l > r) return 0;
     return sumPrefix(r) - (l ? sumPrefix(l - 1) : 0);
   }
-};`}</pre>
-                    <div className="info-box">
-                        <p className="text-blue-800 dark:text-blue-200">
-                            💡 Great for: point update + prefix/range sum, inversion count, coordinate compression + BIT.
-                        </p>
-                    </div>
-                </section>
+  };`}
+          />
+          <div className="info-box">
+            <p className="text-blue-800 dark:text-blue-200">
+              💡 Great for: point update + prefix/range sum, inversion count, coordinate compression + BIT.
+            </p>
+          </div>
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Segment Tree (range query + point update)</h2>
-                    <pre className="code-block">{`struct SegTree {
+        <section className="doc-section">
+          <h2 className="doc-step">Segment Tree (range query + point update)</h2>
+          <CodeBlock
+            language="cpp"
+            code={`struct SegTree {
   int n;
   vector<long long> st;
   SegTree(int n=0) { init(n); }
@@ -494,15 +548,18 @@ function<void(int)> dfs = [&](int u) {
     }
     return res;
   }
-};`}</pre>
-                    <p className="doc-text">
-                        Swap the merge operation (<code className="code-inline">+</code>) for min/max/gcd, etc.
-                    </p>
-                </section>
+};`}
+          />
+          <p className="doc-text">
+            Swap the merge operation (<code className="code-inline">+</code>) for min/max/gcd, etc.
+          </p>
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">Segment Tree (lazy propagation) — range add + range sum</h2>
-                    <pre className="code-block">{`struct LazySeg {
+        <section className="doc-section">
+          <h2 className="doc-step">Segment Tree (lazy propagation) — range add + range sum</h2>
+          <CodeBlock
+            language="cpp"
+            code={`struct LazySeg {
   int n;
   vector<long long> st, lazy;
   LazySeg(int n=0) { init(n); }
@@ -548,15 +605,18 @@ function<void(int)> dfs = [&](int u) {
     int tm = (tl + tr) >> 1;
     return rangeSum(p << 1, tl, tm, l, r) + rangeSum(p << 1 | 1, tm, tr, l, r);
   }
-};`}</pre>
-                </section>
+};`}
+          />
+        </section>
 
-                <section className="doc-section">
-                    <h2 className="doc-step">PBDS (order statistics tree) — kth / order_of_key</h2>
-                    <p className="doc-text">
-                        Useful when you need an ordered set with indexing.
-                    </p>
-                    <pre className="code-block">{`#include <ext/pb_ds/assoc_container.hpp>
+        <section className="doc-section">
+          <h2 className="doc-step">PBDS (order statistics tree) — kth / order_of_key</h2>
+          <p className="doc-text">
+            Useful when you need an ordered set with indexing.
+          </p>
+          <CodeBlock
+            language="cpp"
+            code={`#include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 
@@ -578,33 +638,34 @@ int cntLess20 = os.order_of_key(20); // 1
 ordered_set<pair<int,int>> ods;
 int uid = 0;
 ods.insert({5, uid++});
-ods.insert({5, uid++});`}</pre>
-                    <div className="warning-box">
-                        <p className="text-amber-800 dark:text-amber-200">
-                            ⚠️ PBDS is GCC-specific; works on most CP judges, not on all platforms.
-                        </p>
-                    </div>
-                </section>
+ods.insert({5, uid++});`}
+          />
+          <div className="warning-box">
+            <p className="text-amber-800 dark:text-amber-200">
+              ⚠️ PBDS is GCC-specific; works on most CP judges, not on all platforms.
+            </p>
+          </div>
+        </section>
 
-                <div className="doc-divider" />
+        <div className="doc-divider" />
 
-                <section className="doc-section">
-                    <h2 className="doc-step">✅ Quick Checklist (what you usually need)</h2>
-                    <ul className="doc-list">
-                        <li>Vectors: erase-remove, unique after sort, bounds on sorted arrays</li>
-                        <li>Maps/Sets: <code className="code-inline">lower_bound</code>, <code className="code-inline">upper_bound</code>, predecessor/successor</li>
-                        <li>Heaps: min-heap with <code className="code-inline">greater&lt;&gt;</code>, pair heap for Dijkstra</li>
-                        <li>DSU: union-find for components / Kruskal</li>
-                        <li>Fenwick/SegTree: range queries + updates</li>
-                    </ul>
-                </section>
-            </main>
+        <section className="doc-section">
+          <h2 className="doc-step">✅ Quick Checklist (what you usually need)</h2>
+          <ul className="doc-list">
+            <li>Vectors: erase-remove, unique after sort, bounds on sorted arrays</li>
+            <li>Maps/Sets: <code className="code-inline">lower_bound</code>, <code className="code-inline">upper_bound</code>, predecessor/successor</li>
+            <li>Heaps: min-heap with <code className="code-inline">greater&lt;&gt;</code>, pair heap for Dijkstra</li>
+            <li>DSU: union-find for components / Kruskal</li>
+            <li>Fenwick/SegTree: range queries + updates</li>
+          </ul>
+        </section>
+      </main>
 
-            <footer className="border-t border-zinc-200 dark:border-zinc-800 mt-12">
-                <div className="max-w-4xl mx-auto px-6 py-6 text-center text-zinc-500 dark:text-zinc-500 text-sm">
-                    Personal Documentation Hub
-                </div>
-            </footer>
+      <footer className="border-t border-zinc-200 dark:border-zinc-800 mt-12">
+        <div className="max-w-4xl mx-auto px-6 py-6 text-center text-zinc-500 dark:text-zinc-500 text-sm">
+          Personal Documentation Hub
         </div>
-    );
+      </footer>
+    </div>
+  );
 }

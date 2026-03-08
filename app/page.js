@@ -7,6 +7,13 @@ const documentations = [
     href: "/docs/expo-apk",
     category: "Mobile Development",
   },
+  {
+    title: "C++ STL & DSA Cheatsheet",
+    description:
+      "Most-used C++ STL syntax + DSU, Fenwick, Segment Tree, PBDS for CP/LeetCode",
+    href: "/docs/cpp",
+    category: "C++ / Competitive Programming",
+  },
 ];
 
 export default function Home() {
